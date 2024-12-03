@@ -5,6 +5,8 @@ format:
     code-fold: true
 ---
 
+This is an example from the [Quarto documentation](https://quarto.org/docs/computations/python.html)
+that shows how to mix executable Python code blocks into a markdown file in a "Quarto markdown" `.qmd` file.
 
 For a demonstration of a line plot on a polar axis, see @fig-polar.
 
