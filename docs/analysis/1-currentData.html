@@ -226,7 +226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The study area is Philadelphia, Pennsylvania, USA, a major urban center with diverse urban characteristics. Philadelphia is the sixth-most populous city in the U.S. and is known for its dense urban layout, historical architecture, and significant variation in neighborhood demographics and infrastructure. The city comprises 408 census tracts, which serve as fundamental spatial units for analyzing urban environmental variables.</p>
 <p>The Universal Thermal Climate Index (UTCI) is a comprehensive metric used to assess outdoor thermal comfort and human heat stress under varying climatic conditions. Unlike simple temperature measures, UTCI integrates air temperature, humidity, wind speed, and radiant heat to evaluate the perceived temperature’s impact on the human body. Widely applied in urban planning, climate studies, and public health, UTCI provides a standardized and globally applicable framework for understanding how environmental factors influence human thermal comfort and well-being.</p>
 <ol type="1">
-<li><strong>Show the UTCI data map of Philadelphia</strong> <br> The spatio-temporal distribution of the UTCI from 8 a.m. to 7 p.m. in Philadelphia reveals significant diurnal variations in heat stress across the city. UTCI values begin relatively low in the early morning at 8 a.m., with values ranging from approximately [27.9]°C to [33.4]°C. As the day progresses, UTCI values steadily increase, peaking around midday and early afternoon (12 p.m. to 3 p.m.), reaching maximum levels between [37.0]°C and [38.9]°C. During these peak hours, large portions of the city experience heightened heat stress, especially in areas with vacant land and less vegetation in Northeast Philadelphia. By late afternoon (4 p.m. onward), UTCI values begin to decrease gradually, with noticeable reductions in heat stress by 6 p.m. and continuing into the evening hours. At 7 p.m., the UTCI drops to values between [26.3]°C and [30.6]°C, reflecting the cooling effect as solar radiation diminishes. This temporal pattern demonstrates the peak heat exposure period in the early afternoon and emphasizes the importance of targeted interventions during these high-risk hours to mitigate heat stress impacts in vulnerable urban areas</li>
+<li><strong>Universal Thermal Climate Index （UTCI） Distribution in Philadelphia</strong> <br> The spatio-temporal distribution of the UTCI from 8 a.m. to 7 p.m. in Philadelphia reveals significant diurnal variations in heat stress across the city. UTCI values begin relatively low in the early morning at 8 a.m., with values ranging from approximately [27.9]°C to [33.4]°C. As the day progresses, UTCI values steadily increase, peaking around midday and early afternoon (12 p.m. to 3 p.m.), reaching maximum levels between [37.0]°C and [38.9]°C. During these peak hours, large portions of the city experience heightened heat stress, especially in areas with vacant land and less vegetation in Northeast Philadelphia. By late afternoon (4 p.m. onward), UTCI values begin to decrease gradually, with noticeable reductions in heat stress by 6 p.m. and continuing into the evening hours. At 7 p.m., the UTCI drops to values between [26.3]°C and [30.6]°C, reflecting the cooling effect as solar radiation diminishes. This temporal pattern demonstrates the peak heat exposure period in the early afternoon and emphasizes the importance of targeted interventions during these high-risk hours to mitigate heat stress impacts in vulnerable urban areas</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -235,7 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <ol start="2" type="1">
-<li><strong>Show the Bus Stop data map of Philadelphia</strong> <br> Philadelphia’s public transit system, operated by the Southeastern Pennsylvania Transportation Authority (SEPTA), includes 145 bus routes and 8,126 bus stops across the city, providing extensive coverage and accessibility for residents. This extensive network of bus stops presents an ideal context for studying heat stress at the transit micro-level. Philadelphia’s spatial diversity offers a robust basis for examining the relationship between heat stress around bus stops and the surrounding environment, providing insights into equitable urban planning and transit policy</li>
+<li><strong>Bus Stops in Philadelphia</strong> <br> Philadelphia’s public transit system, operated by the Southeastern Pennsylvania Transportation Authority (SEPTA), includes 145 bus routes and 8,126 bus stops across the city, providing extensive coverage and accessibility for residents. This extensive network of bus stops presents an ideal context for studying heat stress at the transit micro-level. Philadelphia’s spatial diversity offers a robust basis for examining the relationship between heat stress around bus stops and the surrounding environment, providing insights into equitable urban planning and transit policy</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -244,16 +244,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <ol start="3" type="1">
-<li><strong>Show the Bus Stop heat stress map of Philadelphia</strong> <br> To analyze the average temperature of bus stops across different time frames, we observe from Figure 3 that the temperature starts to rise steadily between 8:00 AM and 1:00 PM, eventually reaching a plateau around 1:00 PM. From 1:00 PM to 6:00 PM, the temperature gradually declines at a slow and consistent rate. However, after 6:00 PM, the temperature drops sharply, falling below 30°C by 7:00 PM, marking a significant decrease in overall temperature across all bus stops.</li>
+<li><strong>Bus Stop Heat Stress in Philadelphia</strong> <br> To analyze the average temperature of bus stops across different time frames, we observe from Figure 3 that the temperature starts to rise steadily between 8:00 AM and 1:00 PM, eventually reaching a plateau around 1:00 PM. From 1:00 PM to 6:00 PM, the temperature gradually declines at a slow and consistent rate. However, after 6:00 PM, the temperature drops sharply, falling below 30°C by 7:00 PM, marking a significant decrease in overall temperature across all bus stops.</li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../images/AvgTempByTime.png" class="img-fluid figure-img"></p>
-<figcaption>Fig 2. All Bus Stops’ Average Temperature by Time</figcaption>
+<figcaption>Fig 3. All Bus Stops’ Average Temperature by Time</figcaption>
 </figure>
 </div>
 <p>In each time frame, the bus stop with the highest and lowest temperature is identified as Table 1 shown below:</p>
-<div id="90a020f3" class="cell">
+<div id="90a020f3" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the CSV file</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>extreme_temps_df <span class="op">=</span> pd.read_csv(<span class="st">'temperature_extremes.csv'</span>)</span>
@@ -261,113 +261,113 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the extreme temperature DataFrame</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>display(extreme_temps_df.style.set_caption(<span class="st">"Table 1. Highest and Lowest Temperatures for Each Time Frame"</span>).hide_index())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_2336\336461269.py:6: FutureWarning: this method is deprecated in favour of `Styler.hide(axis="index")`
-  display(extreme_temps_df.style.set_caption("Highest and Lowest Temperatures for Each Time Frame").hide_index())</code></pre>
+<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_2336\4242756400.py:6: FutureWarning: this method is deprecated in favour of `Styler.hide(axis="index")`
+  display(extreme_temps_df.style.set_caption("Table 1. Highest and Lowest Temperatures for Each Time Frame").hide_index())</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <style type="text/css">
 </style>
 
-<div id="T_4939d" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<div id="T_1816c" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_4939d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Highest and Lowest Temperatures for Each Time Frame
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_1816c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Table 1. Highest and Lowest Temperatures for Each Time Frame
 </figcaption>
-<div aria-describedby="T_4939d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table id="T_4939d" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<div aria-describedby="T_1816c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_1816c" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th id="T_4939d_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Time Frame</th>
-<th id="T_4939d_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Max Temp (°C)</th>
-<th id="T_4939d_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Stop with Max Temp</th>
-<th id="T_4939d_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Min Temp (°C)</th>
-<th id="T_4939d_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Stop with Min Temp</th>
+<th id="T_1816c_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Time Frame</th>
+<th id="T_1816c_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Max Temp (°C)</th>
+<th id="T_1816c_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Stop with Max Temp</th>
+<th id="T_1816c_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Min Temp (°C)</th>
+<th id="T_1816c_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Stop with Min Temp</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_4939d_row0_col0" class="data row0 col0">8:00</td>
-<td id="T_4939d_row0_col1" class="data row0 col1">33.157532</td>
-<td id="T_4939d_row0_col2" class="data row0 col2">Lancaster Av &amp; Bible Way</td>
-<td id="T_4939d_row0_col3" class="data row0 col3">28.041004</td>
-<td id="T_4939d_row0_col4" class="data row0 col4">Wayne Av &amp; Johnson St</td>
+<td id="T_1816c_row0_col0" class="data row0 col0">8:00</td>
+<td id="T_1816c_row0_col1" class="data row0 col1">33.157532</td>
+<td id="T_1816c_row0_col2" class="data row0 col2">Lancaster Av &amp; Bible Way</td>
+<td id="T_1816c_row0_col3" class="data row0 col3">28.041004</td>
+<td id="T_1816c_row0_col4" class="data row0 col4">Wayne Av &amp; Johnson St</td>
 </tr>
 <tr class="even">
-<td id="T_4939d_row1_col0" class="data row1 col0">9:00</td>
-<td id="T_4939d_row1_col1" class="data row1 col1">35.673363</td>
-<td id="T_4939d_row1_col2" class="data row1 col2">60th St Station - MFL</td>
-<td id="T_4939d_row1_col3" class="data row1 col3">29.555286</td>
-<td id="T_4939d_row1_col4" class="data row1 col4">60th St &amp; Media St</td>
+<td id="T_1816c_row1_col0" class="data row1 col0">9:00</td>
+<td id="T_1816c_row1_col1" class="data row1 col1">35.673363</td>
+<td id="T_1816c_row1_col2" class="data row1 col2">60th St Station - MFL</td>
+<td id="T_1816c_row1_col3" class="data row1 col3">29.555286</td>
+<td id="T_1816c_row1_col4" class="data row1 col4">60th St &amp; Media St</td>
 </tr>
 <tr class="odd">
-<td id="T_4939d_row2_col0" class="data row2 col0">10:00</td>
-<td id="T_4939d_row2_col1" class="data row2 col1">36.903307</td>
-<td id="T_4939d_row2_col2" class="data row2 col2">Lancaster Av &amp; Bible Way</td>
-<td id="T_4939d_row2_col3" class="data row2 col3">30.945198</td>
-<td id="T_4939d_row2_col4" class="data row2 col4">11th St &amp; Godfrey Av</td>
+<td id="T_1816c_row2_col0" class="data row2 col0">10:00</td>
+<td id="T_1816c_row2_col1" class="data row2 col1">36.903307</td>
+<td id="T_1816c_row2_col2" class="data row2 col2">Lancaster Av &amp; Bible Way</td>
+<td id="T_1816c_row2_col3" class="data row2 col3">30.945198</td>
+<td id="T_1816c_row2_col4" class="data row2 col4">11th St &amp; Godfrey Av</td>
 </tr>
 <tr class="even">
-<td id="T_4939d_row3_col0" class="data row3 col0">11:00</td>
-<td id="T_4939d_row3_col1" class="data row3 col1">37.777462</td>
-<td id="T_4939d_row3_col2" class="data row3 col2">Columbia Av &amp; Delaware Av</td>
-<td id="T_4939d_row3_col3" class="data row3 col3">31.842836</td>
-<td id="T_4939d_row3_col4" class="data row3 col4">11th St &amp; Godfrey Av</td>
+<td id="T_1816c_row3_col0" class="data row3 col0">11:00</td>
+<td id="T_1816c_row3_col1" class="data row3 col1">37.777462</td>
+<td id="T_1816c_row3_col2" class="data row3 col2">Columbia Av &amp; Delaware Av</td>
+<td id="T_1816c_row3_col3" class="data row3 col3">31.842836</td>
+<td id="T_1816c_row3_col4" class="data row3 col4">11th St &amp; Godfrey Av</td>
 </tr>
 <tr class="odd">
-<td id="T_4939d_row4_col0" class="data row4 col0">12:00</td>
-<td id="T_4939d_row4_col1" class="data row4 col1">38.249495</td>
-<td id="T_4939d_row4_col2" class="data row4 col2">Hunting Park Av &amp; Front St</td>
-<td id="T_4939d_row4_col3" class="data row4 col3">32.281161</td>
-<td id="T_4939d_row4_col4" class="data row4 col4">11th St &amp; Godfrey Av</td>
+<td id="T_1816c_row4_col0" class="data row4 col0">12:00</td>
+<td id="T_1816c_row4_col1" class="data row4 col1">38.249495</td>
+<td id="T_1816c_row4_col2" class="data row4 col2">Hunting Park Av &amp; Front St</td>
+<td id="T_1816c_row4_col3" class="data row4 col3">32.281161</td>
+<td id="T_1816c_row4_col4" class="data row4 col4">11th St &amp; Godfrey Av</td>
 </tr>
 <tr class="even">
-<td id="T_4939d_row5_col0" class="data row5 col0">13:00</td>
-<td id="T_4939d_row5_col1" class="data row5 col1">38.254392</td>
-<td id="T_4939d_row5_col2" class="data row5 col2">Hunting Park Av &amp; Front St</td>
-<td id="T_4939d_row5_col3" class="data row5 col3">32.465799</td>
-<td id="T_4939d_row5_col4" class="data row5 col4">11th St &amp; Godfrey Av</td>
+<td id="T_1816c_row5_col0" class="data row5 col0">13:00</td>
+<td id="T_1816c_row5_col1" class="data row5 col1">38.254392</td>
+<td id="T_1816c_row5_col2" class="data row5 col2">Hunting Park Av &amp; Front St</td>
+<td id="T_1816c_row5_col3" class="data row5 col3">32.465799</td>
+<td id="T_1816c_row5_col4" class="data row5 col4">11th St &amp; Godfrey Av</td>
 </tr>
 <tr class="odd">
-<td id="T_4939d_row6_col0" class="data row6 col0">14:00</td>
-<td id="T_4939d_row6_col1" class="data row6 col1">38.213178</td>
-<td id="T_4939d_row6_col2" class="data row6 col2">Wayne Av &amp; Clarissa St</td>
-<td id="T_4939d_row6_col3" class="data row6 col3">32.309602</td>
-<td id="T_4939d_row6_col4" class="data row6 col4">Walnut St &amp; 5th St - FS</td>
+<td id="T_1816c_row6_col0" class="data row6 col0">14:00</td>
+<td id="T_1816c_row6_col1" class="data row6 col1">38.213178</td>
+<td id="T_1816c_row6_col2" class="data row6 col2">Wayne Av &amp; Clarissa St</td>
+<td id="T_1816c_row6_col3" class="data row6 col3">32.309602</td>
+<td id="T_1816c_row6_col4" class="data row6 col4">Walnut St &amp; 5th St - FS</td>
 </tr>
 <tr class="even">
-<td id="T_4939d_row7_col0" class="data row7 col0">15:00</td>
-<td id="T_4939d_row7_col1" class="data row7 col1">38.224674</td>
-<td id="T_4939d_row7_col2" class="data row7 col2">Wayne Av &amp; Clarissa St</td>
-<td id="T_4939d_row7_col3" class="data row7 col3">31.853688</td>
-<td id="T_4939d_row7_col4" class="data row7 col4">Walnut St &amp; 5th St - FS</td>
+<td id="T_1816c_row7_col0" class="data row7 col0">15:00</td>
+<td id="T_1816c_row7_col1" class="data row7 col1">38.224674</td>
+<td id="T_1816c_row7_col2" class="data row7 col2">Wayne Av &amp; Clarissa St</td>
+<td id="T_1816c_row7_col3" class="data row7 col3">31.853688</td>
+<td id="T_1816c_row7_col4" class="data row7 col4">Walnut St &amp; 5th St - FS</td>
 </tr>
 <tr class="odd">
-<td id="T_4939d_row8_col0" class="data row8 col0">16:00</td>
-<td id="T_4939d_row8_col1" class="data row8 col1">37.364624</td>
-<td id="T_4939d_row8_col2" class="data row8 col2">Wayne Av &amp; Clarissa St</td>
-<td id="T_4939d_row8_col3" class="data row8 col3">31.272664</td>
-<td id="T_4939d_row8_col4" class="data row8 col4">Walnut St &amp; 5th St - FS</td>
+<td id="T_1816c_row8_col0" class="data row8 col0">16:00</td>
+<td id="T_1816c_row8_col1" class="data row8 col1">37.364624</td>
+<td id="T_1816c_row8_col2" class="data row8 col2">Wayne Av &amp; Clarissa St</td>
+<td id="T_1816c_row8_col3" class="data row8 col3">31.272664</td>
+<td id="T_1816c_row8_col4" class="data row8 col4">Walnut St &amp; 5th St - FS</td>
 </tr>
 <tr class="even">
-<td id="T_4939d_row9_col0" class="data row9 col0">17:00</td>
-<td id="T_4939d_row9_col1" class="data row9 col1">36.124757</td>
-<td id="T_4939d_row9_col2" class="data row9 col2">Wayne Av &amp; Clarissa St</td>
-<td id="T_4939d_row9_col3" class="data row9 col3">30.130579</td>
-<td id="T_4939d_row9_col4" class="data row9 col4">Bustleton Av &amp; Van Kirk St</td>
+<td id="T_1816c_row9_col0" class="data row9 col0">17:00</td>
+<td id="T_1816c_row9_col1" class="data row9 col1">36.124757</td>
+<td id="T_1816c_row9_col2" class="data row9 col2">Wayne Av &amp; Clarissa St</td>
+<td id="T_1816c_row9_col3" class="data row9 col3">30.130579</td>
+<td id="T_1816c_row9_col4" class="data row9 col4">Bustleton Av &amp; Van Kirk St</td>
 </tr>
 <tr class="odd">
-<td id="T_4939d_row10_col0" class="data row10 col0">18:00</td>
-<td id="T_4939d_row10_col1" class="data row10 col1">36.123368</td>
-<td id="T_4939d_row10_col2" class="data row10 col2">17th St &amp; Arch St</td>
-<td id="T_4939d_row10_col3" class="data row10 col3">28.865079</td>
-<td id="T_4939d_row10_col4" class="data row10 col4">8th St &amp; Cecil B Moore Av - FS</td>
+<td id="T_1816c_row10_col0" class="data row10 col0">18:00</td>
+<td id="T_1816c_row10_col1" class="data row10 col1">36.123368</td>
+<td id="T_1816c_row10_col2" class="data row10 col2">17th St &amp; Arch St</td>
+<td id="T_1816c_row10_col3" class="data row10 col3">28.865079</td>
+<td id="T_1816c_row10_col4" class="data row10 col4">8th St &amp; Cecil B Moore Av - FS</td>
 </tr>
 <tr class="even">
-<td id="T_4939d_row11_col0" class="data row11 col0">19:00</td>
-<td id="T_4939d_row11_col1" class="data row11 col1">29.710466</td>
-<td id="T_4939d_row11_col2" class="data row11 col2">63rd St Station - MFL</td>
-<td id="T_4939d_row11_col3" class="data row11 col3">26.396539</td>
-<td id="T_4939d_row11_col4" class="data row11 col4">Baltimore Av &amp; 44th St</td>
+<td id="T_1816c_row11_col0" class="data row11 col0">19:00</td>
+<td id="T_1816c_row11_col1" class="data row11 col1">29.710466</td>
+<td id="T_1816c_row11_col2" class="data row11 col2">63rd St Station - MFL</td>
+<td id="T_1816c_row11_col3" class="data row11 col3">26.396539</td>
+<td id="T_1816c_row11_col4" class="data row11 col4">Baltimore Av &amp; 44th St</td>
 </tr>
 </tbody>
 </table>
@@ -376,10 +376,28 @@ Table&nbsp;1: Highest and Lowest Temperatures for Each Time Frame
 </div>
 </div>
 </div>
-<ol start="4" type="1">
-<li>Explore 1: in each time frame, which is the highest-temp bus stop and which is the lowest temp.</li>
-<li>Explore 2: which bus stop has the highest avg temp.</li>
-</ol>
+<p>To enhance the geospatial perspective, we created a map visualizing the average temperature at each stop.:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/AvgTempByStop.png" class="img-fluid figure-img"></p>
+<figcaption>Fig 4. Bus Stops’ Average Temperature</figcaption>
+</figure>
+</div>
+<p>To examine more closely, we will display the temperature at each stop for each time frame.</p>
+<div id="ccfad3ee" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> IFrame</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Path to the HTML file</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>html_file <span class="op">=</span> <span class="st">"bus_stop_temperature_map.html"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the HTML file</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>IFrame(src<span class="op">=</span>html_file, width<span class="op">=</span><span class="st">'100%'</span>, height<span class="op">=</span><span class="dv">600</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+
+        <iframe width="100%" height="600" src="bus_stop_temperature_map.html" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
 
 
 

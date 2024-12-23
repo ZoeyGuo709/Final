@@ -535,76 +535,40 @@ Average temperature at 19_mean: 28.30°C</code></pre>
 <span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-5" class="cell">
+<div id="cell-5" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.colors <span class="im">as</span> mcolors</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your GeoDataFrame (gdf) has the following columns:</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># - 'geometry': containing the coordinates of each stop</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># - Columns like '8_mean', '9_mean', ..., '19_mean' for temperature readings</span></span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># List of times and corresponding temperature columns (assuming 12 times)</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [<span class="ss">f'</span><span class="sc">{</span>hour<span class="sc">}</span><span class="ss">_mean'</span> <span class="cf">for</span> hour <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>, <span class="dv">20</span>)]  <span class="co"># From 8 AM to 7 PM</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>titles <span class="op">=</span> [<span class="ss">f"</span><span class="sc">{</span>hour<span class="sc">}</span><span class="ss">:00"</span> <span class="cf">for</span> hour <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>, <span class="dv">20</span>)]</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the average temperature for each stop</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>temperature_columns <span class="op">=</span> [col <span class="cf">for</span> col <span class="kw">in</span> gdf.columns <span class="cf">if</span> <span class="st">'_mean'</span> <span class="kw">in</span> col]</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>gdf[<span class="st">'avg_temp'</span>] <span class="op">=</span> gdf[temperature_columns].mean(axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a colormap for 5 categories</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> mcolors.ListedColormap([<span class="st">'blue'</span>, <span class="st">'green'</span>, <span class="st">'yellow'</span>, <span class="st">'orange'</span>, <span class="st">'red'</span>])</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>bounds <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">50</span>]  <span class="co"># Define temperature bounds for categories</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> mcolors.BoundaryNorm(bounds, cmap.N)</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the number of rows and columns for the subplots</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>num_plots <span class="op">=</span> <span class="bu">len</span>(times)</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> <span class="dv">4</span>  <span class="co"># Number of columns</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> math.ceil(num_plots <span class="op">/</span> cols)  <span class="co"># Calculate rows needed</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure with dynamic subplots</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(rows, cols, figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">15</span>), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>axes <span class="op">=</span> axes.flatten()  <span class="co"># Flatten the axes array for easier indexing</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, time <span class="kw">in</span> <span class="bu">enumerate</span>(times):</span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Categorize the temperature into 5 categories based on defined bounds</span></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    gdf[<span class="st">'category'</span>] <span class="op">=</span> pd.cut(gdf[time], bins<span class="op">=</span>bounds, labels<span class="op">=</span><span class="va">False</span>, include_lowest<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot bus stops with assigned categories</span></span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    gdf.plot(</span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>        ax<span class="op">=</span>axes[i],</span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>        column<span class="op">=</span><span class="st">'category'</span>,  <span class="co"># Use the category column</span></span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>        cmap<span class="op">=</span>cmap,</span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>        markersize<span class="op">=</span><span class="dv">50</span>,</span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>        legend<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>        legend_kwds<span class="op">=</span>{<span class="st">'shrink'</span>: <span class="fl">0.5</span>, <span class="st">'ticks'</span>: bounds, <span class="st">'label'</span>: <span class="st">"Temperature (°C)"</span>},</span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>    axes[i].set_title(<span class="ss">f"Bus Stops Temperature Map (</span><span class="sc">{</span>titles[i]<span class="sc">}</span><span class="ss">)"</span>)</span>
-<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>    axes[i].set_xlabel(<span class="st">"Longitude"</span>)</span>
-<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>    axes[i].set_ylabel(<span class="st">"Latitude"</span>)</span>
-<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn off unused subplots</span></span>
-<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i <span class="op">+</span> <span class="dv">1</span>, <span class="bu">len</span>(axes)):</span>
-<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>    axes[j].axis(<span class="st">'off'</span>)</span>
-<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg ansi-bold">In[9], line 26</span>
-<span class="ansi-green-fg">     22</span> axes <span style="color:rgb(98,98,98)">=</span> axes<span style="color:rgb(98,98,98)">.</span>flatten()  <span style="font-style:italic;color:rgb(95,135,135)"># Flatten the axes array for easier indexing</span>
-<span class="ansi-green-fg">     24</span> <span style="font-weight:bold;color:rgb(0,135,0)">for</span> i, time <span style="font-weight:bold;color:rgb(175,0,255)">in</span> <span style="color:rgb(0,135,0)">enumerate</span>(times):
-<span class="ansi-green-fg">     25</span>     <span style="font-style:italic;color:rgb(95,135,135)"># Categorize the temperature into 5 categories based on defined bounds</span>
-<span class="ansi-green-fg ansi-bold">---&gt; 26</span>     gdf[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">category</span><span style="color:rgb(175,0,0)">'</span>] <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">pd</span><span style="color:rgb(98,98,98)">.</span>cut(gdf[time], bins<span style="color:rgb(98,98,98)">=</span>bounds, labels<span style="color:rgb(98,98,98)">=</span><span style="font-weight:bold;color:rgb(0,135,0)">False</span>, include_lowest<span style="color:rgb(98,98,98)">=</span><span style="font-weight:bold;color:rgb(0,135,0)">True</span>)
-<span class="ansi-green-fg">     28</span>     <span style="font-style:italic;color:rgb(95,135,135)"># Plot bus stops with assigned categories</span>
-<span class="ansi-green-fg">     29</span>     gdf<span style="color:rgb(98,98,98)">.</span>plot(
-<span class="ansi-green-fg">     30</span>         ax<span style="color:rgb(98,98,98)">=</span>axes[i],
-<span class="ansi-green-fg">     31</span>         column<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">category</span><span style="color:rgb(175,0,0)">'</span>,  <span style="font-style:italic;color:rgb(95,135,135)"># Use the category column</span>
-<span class="ansi-green-fg ansi-bold">   (...)</span>
-<span class="ansi-green-fg">     35</span>         legend_kwds<span style="color:rgb(98,98,98)">=</span>{<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">shrink</span><span style="color:rgb(175,0,0)">'</span>: <span style="color:rgb(98,98,98)">0.5</span>, <span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">ticks</span><span style="color:rgb(175,0,0)">'</span>: bounds, <span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">label</span><span style="color:rgb(175,0,0)">'</span>: <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Temperature (°C)</span><span style="color:rgb(175,0,0)">"</span>},
-<span class="ansi-green-fg">     36</span>     )
-
-<span class="ansi-red-fg ansi-bold">NameError</span>: name 'pd' is not defined</pre>
-</div>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the average temperature on a map with city limits overlay</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the city limits</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>city_limits_gdf.plot(ax<span class="op">=</span>ax, color<span class="op">=</span><span class="st">'lightgrey'</span>,alpha <span class="op">=</span> <span class="fl">0.3</span>, edgecolor<span class="op">=</span><span class="st">'none'</span>, label<span class="op">=</span><span class="st">'City Limits'</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the stops with average temperature</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>gdf.plot(column<span class="op">=</span><span class="st">'avg_temp'</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, legend<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>ax, markersize<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Add titles and labels</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Average Temperature of Stops with City Limits'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Longitude'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Latitude'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_40800\526089891.py:25: UserWarning: Legend does not support handles for PatchCollection instances.
+See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#implementing-a-custom-legend-handler
+  ax.legend()
+No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -613,6 +577,54 @@ Cell <span class="ansi-green-fg ansi-bold">In[9], line 26</span>
 </figure>
 </div>
 </div>
+</div>
+<div id="cell-6" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> folium</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> folium.plugins <span class="im">import</span> TimeSliderChoropleth</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the city limits GeoJSON</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>city_limits_gdf <span class="op">=</span> gpd.read_file(<span class="st">"C:/Users/25077/Final/data/City_Limits.geojson"</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>city_limits_gdf <span class="op">=</span> city_limits_gdf.to_crs(epsg<span class="op">=</span><span class="dv">4326</span>)  <span class="co"># Reproject if needed</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your GeoDataFrame (gdf) has the following columns:</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># - 'geometry': containing the coordinates of each stop</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># - Columns like '8_mean', '9_mean', ..., '19_mean' for temperature readings</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert GeoDataFrame to GeoJSON</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>gdf_json <span class="op">=</span> json.loads(gdf.to_json())</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>city_limits_json <span class="op">=</span> json.loads(city_limits_gdf.to_json())</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a base map</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> folium.Map(location<span class="op">=</span>[gdf.geometry.y.mean(), gdf.geometry.x.mean()], zoom_start<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Add city limits as a grey overlay</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>folium.GeoJson(</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    city_limits_json,</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    style_function<span class="op">=</span><span class="kw">lambda</span> x: {</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">'fillColor'</span>: <span class="st">'grey'</span>,</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">'color'</span>: <span class="st">'none'</span>,</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">'fillOpacity'</span>: <span class="fl">0.5</span></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'City Limits'</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>).add_to(m)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Add bus stop temperature layers for each time frame</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>temperature_columns <span class="op">=</span> [col <span class="cf">for</span> col <span class="kw">in</span> gdf.columns <span class="cf">if</span> <span class="st">'_mean'</span> <span class="kw">in</span> col]</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> temp_col <span class="kw">in</span> temperature_columns:</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _, row <span class="kw">in</span> gdf.iterrows():</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>        folium.CircleMarker(</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>            location<span class="op">=</span>(row.geometry.y, row.geometry.x),</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>            radius<span class="op">=</span><span class="dv">5</span>,</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span><span class="st">'blue'</span>,</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>            fill<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>            fill_color<span class="op">=</span><span class="st">'blue'</span>,</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>            fill_opacity<span class="op">=</span>row[temp_col] <span class="op">/</span> <span class="bu">max</span>(gdf[temp_col]) <span class="cf">if</span> row[temp_col] <span class="cf">else</span> <span class="fl">0.5</span>,</span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>        ).add_to(m)</span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Save or display the map</span></span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>m.save(<span class="st">"bus_stop_temperature_map.html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
