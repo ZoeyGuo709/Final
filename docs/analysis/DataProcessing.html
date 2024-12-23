@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MUSA 550: Final Project – MUSA 550 Final Project</title>
+<title>dataprocessing – MUSA 550 Final Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,24 +20,58 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-9ea0a49c779b6fc496fdb60b6bf00fef.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b42cd826e5e3b4a7d83aac9c9e282496.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9ea0a49c779b6fc496fdb60b6bf00fef.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b42cd826e5e3b4a7d83aac9c9e282496.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -67,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -79,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -93,8 +127,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/Distribution_Heat.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/Distribution_Heat.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://www.design.upenn.edu/people/eric-delmelle" title="Personal Website" class="quarto-navigation-tool px-1" aria-label="Personal Website"><i class="bi bi-globe"></i></a>
@@ -111,19 +145,19 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About Me</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./analysis/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../analysis/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -132,25 +166,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./analysis/1-currentData.html" class="sidebar-item-text sidebar-link">
+  <a href="../analysis/1-currentData.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Explore the Universal Thermal Climate Index (UTCI) data of Philadelphia</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./analysis/2-static-images.html" class="sidebar-item-text sidebar-link">
+  <a href="../analysis/2-static-images.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bus Stop Heat Stress</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./analysis/3-altair-hvplot.html" class="sidebar-item-text sidebar-link">
+  <a href="../analysis/3-altair-hvplot.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Explore integration with Socio-Ecological &amp; Built Form</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./analysis/4-folium.html" class="sidebar-item-text sidebar-link">
+  <a href="../analysis/4-folium.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Random Forest Machine Learning</span></a>
   </div>
 </li>
@@ -161,45 +195,124 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome!</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">MUSA 550: Final Project</h1>
-<p class="subtitle lead">Exploring the relationship between heat stress around bus stops and urban environment: A case study of Philadelphia</p>
+
+
+
+<div id="cell-0" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Trail Doc for Data Exploration:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Install geopandas (only required once in Jupyter Notebook)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install geopandas</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary library</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Path to your GeoJSON file</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"C:/Users/25077/Final/data/2020_PA_stops_buffer3_UTCI.geojson"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the GeoJSON file into a GeoDataFrame</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> gpd.read_file(file_path)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the first few rows of the GeoDataFrame</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gdf.head())</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the coordinate reference system (CRS)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gdf.crs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Requirement already satisfied: geopandas in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (0.13.2)
+Requirement already satisfied: fiona&gt;=1.8.19 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas) (1.9.4)
+Requirement already satisfied: packaging in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas) (24.1)
+Requirement already satisfied: pandas&gt;=1.1.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas) (1.5.3)
+Requirement already satisfied: pyproj&gt;=3.0.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas) (3.6.1)
+Requirement already satisfied: shapely&gt;=1.7.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas) (2.0.1)
+Requirement already satisfied: attrs&gt;=19.2.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas) (24.2.0)
+Requirement already satisfied: certifi in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas) (2024.7.4)
+Requirement already satisfied: click~=8.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas) (8.1.7)
+Requirement already satisfied: click-plugins&gt;=1.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas) (1.1.1)
+Requirement already satisfied: cligj&gt;=0.5 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas) (0.7.2)
+Requirement already satisfied: six in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas) (1.16.0)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from pandas&gt;=1.1.0-&gt;geopandas) (2.9.0)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from pandas&gt;=1.1.0-&gt;geopandas) (2024.1)
+Requirement already satisfied: numpy&gt;=1.21.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from pandas&gt;=1.1.0-&gt;geopandas) (1.24.4)
+Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from click~=8.0-&gt;fiona&gt;=1.8.19-&gt;geopandas) (0.4.6)
+Note: you may need to restart the kernel to use updated packages.
+  stop_id                  stop_name        route_ids     8_mean     9_mean  \
+0      69  Front St &amp; Market St Loop  [17, 33, 48, 5]  32.921080  35.331401   
+1     359         Market St &amp; 6th St         [17, 33]  32.915207  35.338738   
+2     428       2nd St Station - MFL            [MFL]  32.882592  35.296339   
+3     638    5th St &amp; Market St - FS         [38, 44]  32.816049  35.166788   
+4     735         7th St &amp; Market St             [47]  32.586969  34.947970   
+
+     10_mean    11_mean    12_mean    13_mean    14_mean    15_mean  \
+0  36.593409  37.493377  37.913334  37.893180  37.814597  37.627905   
+1  36.595370  37.492715  37.932264  37.907860  37.815116  37.605102   
+2  36.539032  37.417567  37.840649  37.825040  37.782353  37.626118   
+3  34.362318  32.769761  37.407488  37.704560  37.758148  37.709751   
+4  34.387193  33.483910  33.636118  35.379926  36.952045  37.521443   
+
+     16_mean    17_mean    18_mean    19_mean  \
+0  36.747721  35.554851  35.416561  29.373637   
+1  36.710582  35.510728  35.384121  28.046279   
+2  36.595218  31.573465  33.564511  28.153362   
+3  36.895949  35.734573  30.248365  26.671371   
+4  36.774522  30.665176  31.752130  28.824302   
+
+                                            geometry  
+0  MULTIPOLYGON (((2699512.735 235350.662, 269951...  
+1  MULTIPOLYGON (((2697281.988 235665.342, 269728...  
+2  MULTIPOLYGON (((2699108.578 235349.659, 269910...  
+3  MULTIPOLYGON (((2697693.353 235764.198, 269769...  
+4  MULTIPOLYGON (((2696802.363 235646.120, 269680...  
+EPSG:2272</code></pre>
+</div>
+</div>
+<div id="cell-1" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert MULTIPOLYGON geometries to their centroids</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>gdf[<span class="st">'geometry'</span>] <span class="op">=</span> gdf.geometry.centroid</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Reproject to WGS 84 (EPSG:4326)</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> gdf.to_crs(epsg<span class="op">=</span><span class="dv">4326</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the city limits GeoJSON</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>city_limits_gdf <span class="op">=</span> gpd.read_file(<span class="st">"C:/Users/25077/Final/data/City_Limits.geojson"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>city_limits_gdf <span class="op">=</span> city_limits_gdf.to_crs(epsg<span class="op">=</span><span class="dv">4326</span>)  <span class="co"># Reproject if needed</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot both layers</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">10</span>))</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>city_limits_gdf.plot(ax<span class="op">=</span>ax, color<span class="op">=</span><span class="st">'lightgray'</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, label<span class="op">=</span><span class="st">"City Limits"</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>gdf.plot(ax<span class="op">=</span>ax, markersize<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'dimgrey'</span>, label<span class="op">=</span><span class="st">"Bus Stops"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Add title and legend</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Bus Stops in Philadelphia"</span>)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Longitude"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Latitude"</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_40800\2252602194.py:4: UserWarning: Geometry is in a geographic CRS. Results from 'centroid' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
+
+  gdf['geometry'] = gdf.geometry.centroid
+C:\Users\25077\AppData\Local\Temp\ipykernel_40800\2252602194.py:22: UserWarning: Legend does not support handles for PatchCollection instances.
+See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#implementing-a-custom-legend-handler
+  plt.legend()</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DataProcessing_files/figure-html/cell-3-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome!</h2>
-<p>This website presents our research on heat stress around bus stops and explores the factors contributing to its occurrence.</p>
-<p>The Urban Heat Island (UHI) effect poses significant challenges to public transit users, especially those waiting at bus stops, where prolonged exposure to extreme heat can result in serious health risks. Despite growing awareness of these dangers, there remains a lack of research examining hyperlocal heat stress levels around bus stops and their interactions with surrounding urban environments. To address this gap, this study leverages Universal Thermal Climate Index (UTCI) data across Philadelphia to analyze heat stress variations in the immediate vicinity of bus stops. Using a Random Forest (RF) model, we investigate the nonlinear relationships and threshold effects between heat stress, socioeconomic characteristics, and built environment factors. The findings reveal substantial spatio-temporal variations in heat stress, with consistently elevated levels during midday hours across the city. Notably, bus stops in neighborhoods with higher poverty rates experience greater heat stress, while those in wealthier areas, as indicated by higher median household values, show comparatively lower levels of heat stress. These results underscore the urgent need for targeted and equitable heat mitigation strategies to protect vulnerable populations in high-risk areas.</p>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
