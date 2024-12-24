@@ -233,8 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>city_limits_gdf <span class="op">=</span> gpd.read_file(<span class="st">"C:/Users/25077/Final/data/City_Limits.geojson"</span>)</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>city_limits_gdf <span class="op">=</span> city_limits_gdf.to_crs(epsg<span class="op">=</span><span class="dv">4326</span>)  <span class="co"># Reproject if needed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Requirement already satisfied: geopandas in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (0.13.2)Note: you may need to restart the kernel to use updated packages.
-
+<pre><code>Requirement already satisfied: geopandas in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (0.13.2)
 Requirement already satisfied: fiona&gt;=1.8.19 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas) (1.9.4)
 Requirement already satisfied: packaging in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas) (24.1)
 Requirement already satisfied: pandas&gt;=1.1.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas) (1.5.3)
@@ -249,7 +248,8 @@ Requirement already satisfied: six in c:\users\25077\miniforge3\envs\musa-550-fa
 Requirement already satisfied: python-dateutil&gt;=2.8.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from pandas&gt;=1.1.0-&gt;geopandas) (2.9.0)
 Requirement already satisfied: pytz&gt;=2020.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from pandas&gt;=1.1.0-&gt;geopandas) (2024.1)
 Requirement already satisfied: numpy&gt;=1.21.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from pandas&gt;=1.1.0-&gt;geopandas) (1.24.4)
-Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from click~=8.0-&gt;fiona&gt;=1.8.19-&gt;geopandas) (0.4.6)</code></pre>
+Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from click~=8.0-&gt;fiona&gt;=1.8.19-&gt;geopandas) (0.4.6)
+Note: you may need to restart the kernel to use updated packages.</code></pre>
 </div>
 </div>
 <div id="cell-1" class="cell" data-execution_count="4">
@@ -347,9 +347,9 @@ Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-5
 </div>
 </div>
 </div>
-<div id="cell-3" class="cell" data-execution_count="13">
+<div id="cell-3" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>filtered_gdf.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -361,9 +361,6 @@ Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-5
 <th data-quarto-table-cell-role="th">stop_name</th>
 <th data-quarto-table-cell-role="th">13_mean</th>
 <th data-quarto-table-cell-role="th">geometry</th>
-<th data-quarto-table-cell-role="th">x</th>
-<th data-quarto-table-cell-role="th">y</th>
-<th data-quarto-table-cell-role="th">cluster</th>
 </tr>
 </thead>
 <tbody>
@@ -373,9 +370,6 @@ Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-5
 <td>Front St &amp; Market St Loop</td>
 <td>37.893180</td>
 <td>POINT (-75.14232 39.94977)</td>
-<td>-75.142317</td>
-<td>39.949765</td>
-<td>-1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -383,9 +377,6 @@ Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-5
 <td>Market St &amp; 6th St</td>
 <td>37.907860</td>
 <td>POINT (-75.15024 39.95081)</td>
-<td>-75.150237</td>
-<td>39.950809</td>
-<td>-1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -393,9 +384,6 @@ Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-5
 <td>2nd St Station - MFL</td>
 <td>37.825040</td>
 <td>POINT (-75.14376 39.94979)</td>
-<td>-75.143758</td>
-<td>39.949795</td>
-<td>-1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -403,9 +391,6 @@ Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-5
 <td>5th St &amp; Market St - FS</td>
 <td>37.704560</td>
 <td>POINT (-75.14876 39.95105)</td>
-<td>-75.148760</td>
-<td>39.951047</td>
-<td>-1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -413,9 +398,6 @@ Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-5
 <td>7th St &amp; Market St</td>
 <td>35.379926</td>
 <td>POINT (-75.15195 39.95080)</td>
-<td>-75.151949</td>
-<td>39.950795</td>
-<td>-1</td>
 </tr>
 </tbody>
 </table>
@@ -423,7 +405,7 @@ Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-5
 </div>
 </div>
 </div>
-<div id="cell-4" class="cell" data-execution_count="6">
+<div id="cell-4" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -465,7 +447,7 @@ Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-5
 <span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_36720\4235607243.py:39: UserWarning: Legend does not support handles for PatchCollection instances.
+<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_25548\4235607243.py:39: UserWarning: Legend does not support handles for PatchCollection instances.
 See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#implementing-a-custom-legend-handler
   plt.legend()
 No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.</code></pre>
@@ -478,7 +460,7 @@ No artists with labels found to put in legend.  Note that artists whose label st
 </div>
 </div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="7">
+<div id="cell-5" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the threshold for the coldest 10% stops</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>cold_threshold <span class="op">=</span> np.percentile(filtered_gdf[<span class="st">"13_mean"</span>], <span class="dv">10</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -509,7 +491,7 @@ No artists with labels found to put in legend.  Note that artists whose label st
 <span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_36720\3189886705.py:28: UserWarning: Legend does not support handles for PatchCollection instances.
+<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_25548\3189886705.py:28: UserWarning: Legend does not support handles for PatchCollection instances.
 See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#implementing-a-custom-legend-handler
   plt.legend()
 No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.</code></pre>
@@ -522,7 +504,7 @@ No artists with labels found to put in legend.  Note that artists whose label st
 </div>
 </div>
 </div>
-<div id="cell-6" class="cell" data-execution_count="13">
+<div id="cell-6" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> DBSCAN</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract coordinates for the hottest 10% stops</span></span>
@@ -628,7 +610,7 @@ Cluster sizes:
 Name: cluster, dtype: int64</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_36720\965146887.py:43: UserWarning: Legend does not support handles for PatchCollection instances.
+<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_25548\965146887.py:43: UserWarning: Legend does not support handles for PatchCollection instances.
 See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#implementing-a-custom-legend-handler
   plt.legend()</code></pre>
 </div>
@@ -640,7 +622,7 @@ See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#impl
 </div>
 </div>
 </div>
-<div id="cell-7" class="cell">
+<div id="cell-7" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> DBSCAN</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract coordinates for the hottest 10% stops</span></span>
@@ -729,7 +711,7 @@ Cluster sizes:
 Name: cluster, dtype: int64</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_36720\3429609326.py:43: UserWarning: Legend does not support handles for PatchCollection instances.
+<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_25548\277517457.py:43: UserWarning: Legend does not support handles for PatchCollection instances.
 See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#implementing-a-custom-legend-handler
   plt.legend()</code></pre>
 </div>
@@ -739,6 +721,384 @@ See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#impl
 <p><img src="MidDay_files/figure-html/cell-9-output-4.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
+</div>
+</div>
+<div id="cell-8" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install esda</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install libpysal splot</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> libpysal <span class="im">as</span> ps</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> esda <span class="im">import</span> Moran</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> splot.esda <span class="im">import</span> moran_scatterplot</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure CRS is consistent</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>filtered_gdf <span class="op">=</span> filtered_gdf.to_crs(epsg<span class="op">=</span><span class="dv">4326</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a spatial weights matrix based on distances between stops</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>coords <span class="op">=</span> filtered_gdf.geometry.<span class="bu">apply</span>(<span class="kw">lambda</span> geom: (geom.x, geom.y)).tolist()</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> ps.weights.DistanceBand.from_dataframe(filtered_gdf, threshold<span class="op">=</span><span class="fl">0.01</span>, silence_warnings<span class="op">=</span><span class="va">True</span>)  <span class="co"># 0.01 is approx. 1km</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Standardize the weights (row-normalization)</span></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>w.transform <span class="op">=</span> <span class="st">'r'</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Moran's I for bus stop temperatures</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> filtered_gdf[<span class="st">"13_mean"</span>].values  <span class="co"># Temperature column</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>moran <span class="op">=</span> Moran(y, w)</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Print Moran's I statistic and p-value</span></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Moran's I: </span><span class="sc">{</span>moran<span class="sc">.</span>I<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P-value: </span><span class="sc">{</span>moran<span class="sc">.</span>p_sim<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize the spatial distribution of temperatures</span></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>filtered_gdf.plot(column<span class="op">=</span><span class="st">"13_mean"</span>, cmap<span class="op">=</span><span class="st">"coolwarm"</span>, legend<span class="op">=</span><span class="va">True</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Spatial Distribution of Bus Stop Temperatures"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Longitude"</span>)</span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Latitude"</span>)</span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Moran's I scatterplot</span></span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> moran_scatterplot(moran)</span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Moran's I Scatterplot"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Requirement already satisfied: esda in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (2.6.0)
+Requirement already satisfied: geopandas&gt;=0.12 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from esda) (0.13.2)
+Requirement already satisfied: libpysal&gt;=4.12 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from esda) (4.12.0)
+Requirement already satisfied: numpy&gt;=1.24 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from esda) (1.24.4)
+Requirement already satisfied: pandas&gt;1.5 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from esda) (1.5.3)
+Requirement already satisfied: scikit-learn&gt;=1.2 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from esda) (1.3.0)
+Requirement already satisfied: scipy&gt;=1.9 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from esda) (1.14.1)
+Requirement already satisfied: shapely&gt;=2.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from esda) (2.0.1)
+Requirement already satisfied: fiona&gt;=1.8.19 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas&gt;=0.12-&gt;esda) (1.9.4)
+Requirement already satisfied: packaging in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas&gt;=0.12-&gt;esda) (24.1)
+Requirement already satisfied: pyproj&gt;=3.0.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas&gt;=0.12-&gt;esda) (3.6.1)
+Requirement already satisfied: beautifulsoup4&gt;=4.10 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal&gt;=4.12-&gt;esda) (4.12.2)
+Requirement already satisfied: platformdirs&gt;=2.0.2 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal&gt;=4.12-&gt;esda) (4.2.2)
+Requirement already satisfied: requests&gt;=2.27 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal&gt;=4.12-&gt;esda) (2.31.0)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from pandas&gt;1.5-&gt;esda) (2.9.0)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from pandas&gt;1.5-&gt;esda) (2024.1)
+Requirement already satisfied: joblib&gt;=1.1.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from scikit-learn&gt;=1.2-&gt;esda) (1.4.2)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from scikit-learn&gt;=1.2-&gt;esda) (3.5.0)
+Requirement already satisfied: soupsieve&gt;1.2 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from beautifulsoup4&gt;=4.10-&gt;libpysal&gt;=4.12-&gt;esda) (2.5)
+Requirement already satisfied: attrs&gt;=19.2.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas&gt;=0.12-&gt;esda) (24.2.0)
+Requirement already satisfied: certifi in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas&gt;=0.12-&gt;esda) (2024.7.4)
+Requirement already satisfied: click~=8.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas&gt;=0.12-&gt;esda) (8.1.7)
+Requirement already satisfied: click-plugins&gt;=1.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas&gt;=0.12-&gt;esda) (1.1.1)
+Requirement already satisfied: cligj&gt;=0.5 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas&gt;=0.12-&gt;esda) (0.7.2)
+Requirement already satisfied: six in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas&gt;=0.12-&gt;esda) (1.16.0)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from requests&gt;=2.27-&gt;libpysal&gt;=4.12-&gt;esda) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from requests&gt;=2.27-&gt;libpysal&gt;=4.12-&gt;esda) (3.8)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from requests&gt;=2.27-&gt;libpysal&gt;=4.12-&gt;esda) (1.26.19)
+Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from click~=8.0-&gt;fiona&gt;=1.8.19-&gt;geopandas&gt;=0.12-&gt;esda) (0.4.6)
+Note: you may need to restart the kernel to use updated packages.
+Requirement already satisfied: libpysal in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (4.12.0)
+Requirement already satisfied: splot in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (1.1.7)
+Requirement already satisfied: beautifulsoup4&gt;=4.10 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal) (4.12.2)
+Requirement already satisfied: geopandas&gt;=0.10.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal) (0.13.2)
+Requirement already satisfied: numpy&gt;=1.22 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal) (1.24.4)
+Requirement already satisfied: packaging&gt;=22 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal) (24.1)
+Requirement already satisfied: pandas&gt;=1.4 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal) (1.5.3)
+Requirement already satisfied: platformdirs&gt;=2.0.2 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal) (4.2.2)
+Requirement already satisfied: requests&gt;=2.27 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal) (2.31.0)
+Requirement already satisfied: scipy&gt;=1.8 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal) (1.14.1)
+Requirement already satisfied: shapely&gt;=2.0.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal) (2.0.1)
+Requirement already satisfied: scikit-learn&gt;=1.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from libpysal) (1.3.0)
+Requirement already satisfied: esda in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from splot) (2.6.0)
+Requirement already satisfied: giddy in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from splot) (2.3.6)
+Requirement already satisfied: mapclassify in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from splot) (2.5.0)
+Requirement already satisfied: matplotlib&gt;=3.3.3 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from splot) (3.7.2)
+Requirement already satisfied: seaborn&gt;=0.11.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from splot) (0.12.2)
+Requirement already satisfied: spreg in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from splot) (1.8.1)
+Requirement already satisfied: soupsieve&gt;1.2 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from beautifulsoup4&gt;=4.10-&gt;libpysal) (2.5)
+Requirement already satisfied: fiona&gt;=1.8.19 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas&gt;=0.10.0-&gt;libpysal) (1.9.4)
+Requirement already satisfied: pyproj&gt;=3.0.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from geopandas&gt;=0.10.0-&gt;libpysal) (3.6.1)
+Requirement already satisfied: contourpy&gt;=1.0.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from matplotlib&gt;=3.3.3-&gt;splot) (1.3.0)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from matplotlib&gt;=3.3.3-&gt;splot) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from matplotlib&gt;=3.3.3-&gt;splot) (4.53.1)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from matplotlib&gt;=3.3.3-&gt;splot) (1.4.5)
+Requirement already satisfied: pillow&gt;=6.2.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from matplotlib&gt;=3.3.3-&gt;splot) (10.0.0)
+Requirement already satisfied: pyparsing&lt;3.1,&gt;=2.3.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from matplotlib&gt;=3.3.3-&gt;splot) (3.0.9)
+Requirement already satisfied: python-dateutil&gt;=2.7 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from matplotlib&gt;=3.3.3-&gt;splot) (2.9.0)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from pandas&gt;=1.4-&gt;libpysal) (2024.1)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from requests&gt;=2.27-&gt;libpysal) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from requests&gt;=2.27-&gt;libpysal) (3.8)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from requests&gt;=2.27-&gt;libpysal) (1.26.19)
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from requests&gt;=2.27-&gt;libpysal) (2024.7.4)
+Requirement already satisfied: joblib&gt;=1.1.1 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from scikit-learn&gt;=1.1-&gt;libpysal) (1.4.2)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from scikit-learn&gt;=1.1-&gt;libpysal) (3.5.0)
+Requirement already satisfied: quantecon&gt;=0.7 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from giddy-&gt;splot) (0.7.2)
+Requirement already satisfied: networkx in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from mapclassify-&gt;splot) (3.1)
+Requirement already satisfied: attrs&gt;=19.2.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas&gt;=0.10.0-&gt;libpysal) (24.2.0)
+Requirement already satisfied: click~=8.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas&gt;=0.10.0-&gt;libpysal) (8.1.7)
+Requirement already satisfied: click-plugins&gt;=1.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas&gt;=0.10.0-&gt;libpysal) (1.1.1)
+Requirement already satisfied: cligj&gt;=0.5 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas&gt;=0.10.0-&gt;libpysal) (0.7.2)
+Requirement already satisfied: six in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from fiona&gt;=1.8.19-&gt;geopandas&gt;=0.10.0-&gt;libpysal) (1.16.0)
+Requirement already satisfied: numba&gt;=0.49.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from quantecon&gt;=0.7-&gt;giddy-&gt;splot) (0.60.0)
+Requirement already satisfied: sympy in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from quantecon&gt;=0.7-&gt;giddy-&gt;splot) (1.13.2)
+Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from click~=8.0-&gt;fiona&gt;=1.8.19-&gt;geopandas&gt;=0.10.0-&gt;libpysal) (0.4.6)
+Requirement already satisfied: llvmlite&lt;0.44,&gt;=0.43.0dev0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from numba&gt;=0.49.0-&gt;quantecon&gt;=0.7-&gt;giddy-&gt;splot) (0.43.0)
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in c:\users\25077\miniforge3\envs\musa-550-fall-2023\lib\site-packages (from sympy-&gt;quantecon&gt;=0.7-&gt;giddy-&gt;splot) (1.3.0)
+Note: you may need to restart the kernel to use updated packages.
+Moran's I: 0.09913440203742446
+P-value: 0.001</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MidDay_files/figure-html/cell-10-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MidDay_files/figure-html/cell-10-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-9" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> esda.moran <span class="im">import</span> Moran_Local</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> splot.esda <span class="im">import</span> lisa_cluster</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure CRS is consistent</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>filtered_gdf <span class="op">=</span> filtered_gdf.to_crs(epsg<span class="op">=</span><span class="dv">4326</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a spatial weights matrix</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> ps.weights.DistanceBand.from_dataframe(filtered_gdf, threshold<span class="op">=</span><span class="fl">0.01</span>, silence_warnings<span class="op">=</span><span class="va">True</span>)  <span class="co"># ~1km</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>w.transform <span class="op">=</span> <span class="st">'r'</span>  <span class="co"># Row-standardize the weights</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the temperature column</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> filtered_gdf[<span class="st">"13_mean"</span>].values</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Local Moran's I</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>local_moran <span class="op">=</span> Moran_Local(y, w)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Add LISA results to GeoDataFrame</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>filtered_gdf[<span class="st">"Local Moran"</span>] <span class="op">=</span> local_moran.Is</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>filtered_gdf[<span class="st">"LISA Cluster"</span>] <span class="op">=</span> local_moran.q  <span class="co"># Quadrant: 1=HH, 2=LH, 3=LL, 4=HL</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new column for human-readable cluster labels</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>filtered_gdf[<span class="st">"Cluster Type"</span>] <span class="op">=</span> filtered_gdf[<span class="st">"LISA Cluster"</span>].<span class="bu">map</span>(</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>    {<span class="dv">1</span>: <span class="st">"High-High"</span>, <span class="dv">2</span>: <span class="st">"Low-High"</span>, <span class="dv">3</span>: <span class="st">"Low-Low"</span>, <span class="dv">4</span>: <span class="st">"High-Low"</span>}</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot city limits and overlay bus stops</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot city limits</span></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>city_limits_gdf.plot(ax<span class="op">=</span>ax, color<span class="op">=</span><span class="st">"lightgrey"</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">"City Limits"</span>)</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot bus stops with LISA cluster types</span></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>filtered_gdf.plot(</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>    column<span class="op">=</span><span class="st">"Cluster Type"</span>,</span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">"tab10"</span>,</span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax,</span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>    markersize<span class="op">=</span><span class="dv">3</span>,  <span class="co"># Adjust dot size here</span></span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.9</span>,</span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">"Bus Stops"</span></span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Add title and labels</span></span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"LISA Cluster Map of Bus Stop Temperatures"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Longitude"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Latitude"</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MidDay_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-10" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">## ACS:</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Path to your GeoJSON file</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"../data/2020_PA_stops_UTCI_ACS_SVI_Building.geojson"</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the GeoJSON file</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>ACS_Stops <span class="op">=</span> gpd.read_file(file_path)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>ACS_Stops.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">stop_id</th>
+<th data-quarto-table-cell-role="th">stop_name</th>
+<th data-quarto-table-cell-role="th">route_ids</th>
+<th data-quarto-table-cell-role="th">UTCI_morning</th>
+<th data-quarto-table-cell-role="th">UTCI_evening</th>
+<th data-quarto-table-cell-role="th">UTCI_midday</th>
+<th data-quarto-table-cell-role="th">WFH</th>
+<th data-quarto-table-cell-role="th">MHI</th>
+<th data-quarto-table-cell-role="th">GI</th>
+<th data-quarto-table-cell-role="th">MR</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">UTM_X</th>
+<th data-quarto-table-cell-role="th">UTM_Y</th>
+<th data-quarto-table-cell-role="th">GVI</th>
+<th data-quarto-table-cell-role="th">sky_mean</th>
+<th data-quarto-table-cell-role="th">Enclosure</th>
+<th data-quarto-table-cell-role="th">BD</th>
+<th data-quarto-table-cell-role="th">BH</th>
+<th data-quarto-table-cell-role="th">FAR</th>
+<th data-quarto-table-cell-role="th">BN</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>69</td>
+<td>Front St &amp; Market St Loop</td>
+<td>[17, 33, 48, 5]</td>
+<td>34.948630</td>
+<td>33.448350</td>
+<td>37.581686</td>
+<td>0.139661</td>
+<td>115521.638538</td>
+<td>0.398989</td>
+<td>1764.916597</td>
+<td>...</td>
+<td>2.699503e+06</td>
+<td>235350.66167</td>
+<td>0.058356</td>
+<td>0.310574</td>
+<td>0.23491</td>
+<td>0.196293</td>
+<td>1430.473848</td>
+<td>5.310069</td>
+<td>63</td>
+<td>POINT (2699502.892 235350.662)</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>359</td>
+<td>Market St &amp; 6th St</td>
+<td>[17, 33]</td>
+<td>34.949771</td>
+<td>32.980376</td>
+<td>37.577274</td>
+<td>0.131727</td>
+<td>96124.564583</td>
+<td>0.435392</td>
+<td>1683.756114</td>
+<td>...</td>
+<td>2.697272e+06</td>
+<td>235665.34239</td>
+<td>0.081433</td>
+<td>0.252196</td>
+<td>0.27737</td>
+<td>0.234227</td>
+<td>1468.262696</td>
+<td>12.516998</td>
+<td>36</td>
+<td>POINT (2697272.146 235665.342)</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>428</td>
+<td>2nd St Station - MFL</td>
+<td>[MFL]</td>
+<td>34.905987</td>
+<td>31.097113</td>
+<td>37.514491</td>
+<td>0.137856</td>
+<td>112177.011471</td>
+<td>0.408251</td>
+<td>1716.078724</td>
+<td>...</td>
+<td>2.699099e+06</td>
+<td>235349.65942</td>
+<td>0.072020</td>
+<td>0.299649</td>
+<td>0.24390</td>
+<td>0.244679</td>
+<td>1592.339376</td>
+<td>6.664597</td>
+<td>70</td>
+<td>POINT (2699098.735 235349.659)</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>638</td>
+<td>5th St &amp; Market St - FS</td>
+<td>[38, 44]</td>
+<td>34.115052</td>
+<td>30.884770</td>
+<td>36.707610</td>
+<td>0.139792</td>
+<td>101569.077090</td>
+<td>0.416658</td>
+<td>1701.532301</td>
+<td>...</td>
+<td>2.697684e+06</td>
+<td>235764.19761</td>
+<td>0.099296</td>
+<td>0.258906</td>
+<td>0.27435</td>
+<td>0.264319</td>
+<td>1435.131718</td>
+<td>9.756211</td>
+<td>50</td>
+<td>POINT (2697683.510 235764.198)</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>735</td>
+<td>7th St &amp; Market St</td>
+<td>[47]</td>
+<td>33.439477</td>
+<td>30.658051</td>
+<td>35.593438</td>
+<td>0.127642</td>
+<td>87832.216610</td>
+<td>0.451920</td>
+<td>1651.475390</td>
+<td>...</td>
+<td>2.696793e+06</td>
+<td>235646.11977</td>
+<td>0.062803</td>
+<td>0.242758</td>
+<td>0.28786</td>
+<td>0.296215</td>
+<td>1855.769137</td>
+<td>17.565049</td>
+<td>38</td>
+<td>POINT (2696792.521 235646.120)</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 40 columns</p>
+</div>
+</div>
+</div>
+<div id="cell-11" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display all column names</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ACS_Stops.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Index(['stop_id', 'stop_name', 'route_ids', 'UTCI_morning', 'UTCI_evening',
+       'UTCI_midday', 'WFH', 'MHI', 'GI', 'MR', 'MHV', 'Uninsured_19',
+       'Uninsured_19_34', 'Uninsured_35_64', 'Uninsured_65', 'Area_km2', 'UR',
+       'PR', 'BR', 'PD', 'CHR', 'White_prop', 'Black_prop',
+       'Native_American_prop', 'Asian_prop', 'OtherRaces_prop', 'ED',
+       'UTCI_400_sum', 'UTCI_avg', 'MEAN', 'UTM_X', 'UTM_Y', 'GVI', 'sky_mean',
+       'Enclosure', 'BD', 'BH', 'FAR', 'BN', 'geometry'],
+      dtype='object')</code></pre>
 </div>
 </div>
 
