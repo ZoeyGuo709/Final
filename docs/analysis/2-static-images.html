@@ -212,19 +212,13 @@ ul.task-list li input[type="checkbox"] {
 <ol start="3" type="1">
 <li><strong>Clustering</strong></li>
 </ol>
-<p>We are curious if the Hottest and Coldest 10% bus stops are spatially clusterd, Here we are using DBSCAN to identfy the clustering</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/cluster.png" class="img-fluid figure-img"></p>
-<figcaption>Fig 4. Hottest 10% Bus Stops Clustering</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/cluster2.png" class="img-fluid figure-img"></p>
-<figcaption>Fig 5. Coldest 10% Bus Stops Clustering</figcaption>
-</figure>
-</div>
+<p>We are interested in determining whether the hottest and coldest 10% of bus stops are spatially clustered. To investigate this, we use DBSCAN to identify potential clusters.</p>
+<p><img src="../images/cluster.png" class="img-fluid" alt="Fig 4. Hottest 10% Bus Stops Clustering"> As shown in Fig. 4, the hottest 10% of bus stops form several small clusters. These clusters are primarily concentrated in the Frankford area, along Roosevelt Boulevard in northeastern Philadelphia, and in the southern part of the city along Christopher Columbus Boulevard.</p>
+<p><img src="../images/cluster2.png" class="img-fluid" alt="Fig 5. Coldest 10% Bus Stops Clustering"> As shown in Fig. 5, the coldest 10% of bus stops exhibit a clear clustering pattern in the Center City area, including neighborhoods such as Rittenhouse Square and Logan Square. Additional clusters are present in the northwestern part of the city, including Mt. Airy and Northwest Philadelphia.</p>
+<ol start="4" type="1">
+<li><strong>Spatial Autocorrelation</strong> Here we want to look at all the stops together, to see if specific spatial relationships (clusters or outliers) exist between bus stop temperatures and their neighboring stops.</li>
+</ol>
+<p><img src="../images/autocorrelation.png" class="img-fluid" alt="Fig 6. Bus Stops Temperatures Spatial Autocorrelation"> - High-High Area: Hotspots or clusters of high temperatures are likely the result of urban heat islands or a lack of cooling infrastructure, such as shade or vegetation. These areas, predominantly in the northern, southern, and western parts of the city, may benefit from interventions like installing shade structures or using reflective materials to help reduce heat levels. - High-Low Area: Bus stops with high temperatures surrounded by bus stops with lower temperatures may indicate outliers caused by localized heat effects, such as a lack of shade, excessive asphalt coverage, or dense infrastructure. These anomalies warrant further investigation to identify the specific conditions contributing to elevated temperatures. Such patterns are predominantly observed in the northern and northeastern areas of the city. - Low-Low Area: Bus stops with low temperatures surrounded by other low-temperature stops indicate cold spots, likely due to natural cooling effects such as proximity to green spaces, water bodies, or less dense infrastructure. While these areas may not require immediate intervention, they offer valuable insights into effective cooling mechanisms that can be replicated in hotter regions. These patterns are primarily observed in Center City, the northwestern areas, and the far northeast, aligning with our analysis of the coldest 10% of bus stops. - Low-High Area: Bus stops with low temperatures surrounded by bus stops with higher temperatures suggest outliers, likely caused by localized cooling effects such as shade trees, reflective surfaces, or proximity to cooling infrastructure. These areas offer opportunities to study and replicate effective cooling strategies in hotter zones. They are predominantly located on the outskirts of cold spot areas.</p>
 
 
 
