@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "About Us"
 toc: false
 ---
 
@@ -8,9 +8,9 @@ toc: false
 <img src="images/Shengao.jpg" alt="Shengao Yi" style="width: 170px; border-radius: 10px;">
 
 <div>
-  <p><span style="color:orange">Hey everyone</span></p>
+  <p><span style="color:grey">Hey everyone</span></p>
 
-  - I am a Ph.D. student in City & Regional Planning at the University of Pennsylvania Weitzman School of Design, concentrating on landscape planning and urban analytics. 
+  - My name is Shengao Yi, I am a Ph.D. student in City & Regional Planning at the University of Pennsylvania Weitzman School of Design, concentrating on landscape planning and urban analytics. 
   - You can find more information about me on my [personal website](https://shengaoyi.github.io).
   - My research focuses on the AI for landscape planning, optimization and design, urban microclimate modeling, micro-scale urban analytics, and GeoAI. I am dedicated to addressing socio-environmental challenges by developing innovative AI-driven approaches to mitigate urban heat effects, optimize green infrastructure, and enhance urban resilience.
 </div>
@@ -19,7 +19,7 @@ toc: false
 <img src="images/Ziyi.jpg" alt="Ziyi Guo" style="width: 170px; border-radius: 10px;">
 
 <div>
-  <p><span style="color:orange">Hello everyone</span></p>
+  <p><span style="color:grey">Hello everyone</span></p>
 
   - My name is Ziyi Guo, 2nd year MCP student concentrated in Smart Cities. 
   - You can find more information about me on my [personal website](https://zoeyguo709.github.io/).
