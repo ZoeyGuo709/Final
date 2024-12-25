@@ -5,6 +5,17 @@ toc: false
 
 <div style="display: flex; gap: 10px; align-items: flex-start;">
 
+<img src="images/Shengao.jpg" alt="Shengao Yi" style="width: 170px; border-radius: 10px;">
+
+<div>
+  <p><span style="color:orange">Hey everyone</span></p>
+
+  - I am a Ph.D. student in City & Regional Planning at the University of Pennsylvania Weitzman School of Design, concentrating on landscape planning and urban analytics. 
+  - You can find more information about me on my [personal website](https://shengaoyi.github.io).
+  - My research focuses on the AI for landscape planning, optimization and design, urban microclimate modeling, micro-scale urban analytics, and GeoAI. I am dedicated to addressing socio-environmental challenges by developing innovative AI-driven approaches to mitigate urban heat effects, optimize green infrastructure, and enhance urban resilience.
+</div>
+
+
 <img src="images/Ziyi.jpg" alt="Ziyi Guo" style="width: 170px; border-radius: 10px;">
 
 <div>

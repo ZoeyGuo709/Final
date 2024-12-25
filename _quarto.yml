@@ -7,7 +7,7 @@ project:
 website:
   title: "MUSA 550 Final Project"
   page-footer:
-    left: "christineguo6@gmail.com"
+    left: "MUSA 550 Final Project"
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
 
   sidebar:
