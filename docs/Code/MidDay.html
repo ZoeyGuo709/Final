@@ -207,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div id="cell-0" class="cell" data-execution_count="3">
+<div id="cell-0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 2 Step: Mid-Day Examination.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install geopandas</span>
@@ -252,7 +252,7 @@ Requirement already satisfied: colorama in c:\users\25077\miniforge3\envs\musa-5
 Note: you may need to restart the kernel to use updated packages.</code></pre>
 </div>
 </div>
-<div id="cell-1" class="cell" data-execution_count="4">
+<div id="cell-1" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary libraries</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -298,7 +298,7 @@ Note: you may need to restart the kernel to use updated packages.</code></pre>
 [8126 rows x 4 columns]</code></pre>
 </div>
 </div>
-<div id="cell-2" class="cell" data-execution_count="5">
+<div id="cell-2" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -347,9 +347,9 @@ Note: you may need to restart the kernel to use updated packages.</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-3" class="cell" data-execution_count="6">
+<div id="cell-3" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>filtered_gdf.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -405,7 +405,7 @@ Note: you may need to restart the kernel to use updated packages.</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-4" class="cell" data-execution_count="7">
+<div id="cell-4" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -447,7 +447,7 @@ Note: you may need to restart the kernel to use updated packages.</code></pre>
 <span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_25548\4235607243.py:39: UserWarning: Legend does not support handles for PatchCollection instances.
+<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_18848\4235607243.py:39: UserWarning: Legend does not support handles for PatchCollection instances.
 See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#implementing-a-custom-legend-handler
   plt.legend()
 No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.</code></pre>
@@ -460,7 +460,7 @@ No artists with labels found to put in legend.  Note that artists whose label st
 </div>
 </div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="8">
+<div id="cell-5" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the threshold for the coldest 10% stops</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>cold_threshold <span class="op">=</span> np.percentile(filtered_gdf[<span class="st">"13_mean"</span>], <span class="dv">10</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -491,7 +491,7 @@ No artists with labels found to put in legend.  Note that artists whose label st
 <span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_25548\3189886705.py:28: UserWarning: Legend does not support handles for PatchCollection instances.
+<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_18848\3189886705.py:28: UserWarning: Legend does not support handles for PatchCollection instances.
 See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#implementing-a-custom-legend-handler
   plt.legend()
 No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.</code></pre>
@@ -504,7 +504,7 @@ No artists with labels found to put in legend.  Note that artists whose label st
 </div>
 </div>
 </div>
-<div id="cell-6" class="cell" data-execution_count="9">
+<div id="cell-6" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> DBSCAN</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract coordinates for the hottest 10% stops</span></span>
@@ -610,7 +610,7 @@ Cluster sizes:
 Name: cluster, dtype: int64</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_25548\965146887.py:43: UserWarning: Legend does not support handles for PatchCollection instances.
+<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_18848\965146887.py:43: UserWarning: Legend does not support handles for PatchCollection instances.
 See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#implementing-a-custom-legend-handler
   plt.legend()</code></pre>
 </div>
@@ -622,7 +622,7 @@ See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#impl
 </div>
 </div>
 </div>
-<div id="cell-7" class="cell" data-execution_count="10">
+<div id="cell-7" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> DBSCAN</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract coordinates for the hottest 10% stops</span></span>
@@ -711,7 +711,7 @@ Cluster sizes:
 Name: cluster, dtype: int64</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_25548\277517457.py:43: UserWarning: Legend does not support handles for PatchCollection instances.
+<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_18848\277517457.py:43: UserWarning: Legend does not support handles for PatchCollection instances.
 See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#implementing-a-custom-legend-handler
   plt.legend()</code></pre>
 </div>
@@ -723,7 +723,7 @@ See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#impl
 </div>
 </div>
 </div>
-<div id="cell-8" class="cell" data-execution_count="11">
+<div id="cell-8" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install esda</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install libpysal splot</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -860,7 +860,7 @@ P-value: 0.001</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-9" class="cell" data-execution_count="18">
+<div id="cell-9" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> esda.moran <span class="im">import</span> Moran_Local</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> splot.esda <span class="im">import</span> lisa_cluster</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -919,7 +919,7 @@ P-value: 0.001</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-10" class="cell" data-execution_count="20">
+<div id="cell-10" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">## ACS:</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Path to your GeoJSON file</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"../data/2020_PA_stops_UTCI_ACS_SVI_Building.geojson"</span> </span>
@@ -928,7 +928,7 @@ P-value: 0.001</code></pre>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>ACS_Stops <span class="op">=</span> gpd.read_file(file_path)</span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>ACS_Stops.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -1087,7 +1087,7 @@ P-value: 0.001</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-11" class="cell" data-execution_count="21">
+<div id="cell-11" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display all column names</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ACS_Stops.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1099,6 +1099,330 @@ P-value: 0.001</code></pre>
        'UTCI_400_sum', 'UTCI_avg', 'MEAN', 'UTM_X', 'UTM_Y', 'GVI', 'sky_mean',
        'Enclosure', 'BD', 'BH', 'FAR', 'BN', 'geometry'],
       dtype='object')</code></pre>
+</div>
+</div>
+<div id="cell-12" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert MULTIPOLYGON geometries to their centroids</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>ACS_Stops[<span class="st">'geometry'</span>] <span class="op">=</span> ACS_Stops.geometry.centroid</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Reproject to WGS 84 (EPSG:4326)</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>ACS_Stops <span class="op">=</span> ACS_Stops.to_crs(epsg<span class="op">=</span><span class="dv">4326</span>)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming `ACS_Stops` contains the bus stops and `city_limits_gdf` contains the city limits</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure with 1 row and 3 columns of subplots</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">6</span>))</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot City Limits for reference</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>city_limits_gdf.plot(ax<span class="op">=</span>axes[<span class="dv">0</span>], color<span class="op">=</span><span class="st">"lightgrey"</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">"City Limits"</span>)</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>city_limits_gdf.plot(ax<span class="op">=</span>axes[<span class="dv">1</span>], color<span class="op">=</span><span class="st">"lightgrey"</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">"City Limits"</span>)</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>city_limits_gdf.plot(ax<span class="op">=</span>axes[<span class="dv">2</span>], color<span class="op">=</span><span class="st">"lightgrey"</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">"City Limits"</span>)</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Population Density</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>ACS_Stops.plot(</span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>    column<span class="op">=</span><span class="st">"PD"</span>,</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">"magma"</span>,</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">0</span>],</span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>    markersize<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.7</span>,</span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">"Population Density"</span></span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">"Population Density of Bus Stops"</span>)</span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">"Longitude"</span>)</span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">"Latitude"</span>)</span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Ethnic Diversity</span></span>
+<span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a>ACS_Stops.plot(</span>
+<span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a>    column<span class="op">=</span><span class="st">"ED"</span>,</span>
+<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">"RdPu"</span>,</span>
+<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">1</span>],</span>
+<span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a>    markersize<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.7</span>,</span>
+<span id="cb26-44"><a href="#cb26-44" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">"Ethnic Diversity"</span></span>
+<span id="cb26-45"><a href="#cb26-45" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">"Ethnic Diversity of Bus Stops"</span>)</span>
+<span id="cb26-47"><a href="#cb26-47" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">"Longitude"</span>)</span>
+<span id="cb26-48"><a href="#cb26-48" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">"Latitude"</span>)</span>
+<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-50"><a href="#cb26-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Poverty Rate</span></span>
+<span id="cb26-51"><a href="#cb26-51" aria-hidden="true" tabindex="-1"></a>ACS_Stops.plot(</span>
+<span id="cb26-52"><a href="#cb26-52" aria-hidden="true" tabindex="-1"></a>    column<span class="op">=</span><span class="st">"PR"</span>,</span>
+<span id="cb26-53"><a href="#cb26-53" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">"Reds"</span>,</span>
+<span id="cb26-54"><a href="#cb26-54" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb26-55"><a href="#cb26-55" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">2</span>],</span>
+<span id="cb26-56"><a href="#cb26-56" aria-hidden="true" tabindex="-1"></a>    markersize<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb26-57"><a href="#cb26-57" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.7</span>,</span>
+<span id="cb26-58"><a href="#cb26-58" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">"Poverty Rate"</span></span>
+<span id="cb26-59"><a href="#cb26-59" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-60"><a href="#cb26-60" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">"Poverty Rate of Bus Stops"</span>)</span>
+<span id="cb26-61"><a href="#cb26-61" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_xlabel(<span class="st">"Longitude"</span>)</span>
+<span id="cb26-62"><a href="#cb26-62" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_ylabel(<span class="st">"Latitude"</span>)</span>
+<span id="cb26-63"><a href="#cb26-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-64"><a href="#cb26-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout to avoid overlap</span></span>
+<span id="cb26-65"><a href="#cb26-65" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb26-66"><a href="#cb26-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-67"><a href="#cb26-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plots</span></span>
+<span id="cb26-68"><a href="#cb26-68" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb26-69"><a href="#cb26-69" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\25077\AppData\Local\Temp\ipykernel_18848\2852317162.py:5: UserWarning: Geometry is in a geographic CRS. Results from 'centroid' are likely incorrect. Use 'GeoSeries.to_crs()' to re-project geometries to a projected CRS before this operation.
+
+  ACS_Stops['geometry'] = ACS_Stops.geometry.centroid</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MidDay_files/figure-html/cell-14-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-13" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a figure with 1 row and 3 columns of subplots</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">6</span>))</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot City Limits for reference</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>city_limits_gdf.plot(ax<span class="op">=</span>axes[<span class="dv">0</span>], color<span class="op">=</span><span class="st">"lightgrey"</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">"City Limits"</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>city_limits_gdf.plot(ax<span class="op">=</span>axes[<span class="dv">1</span>], color<span class="op">=</span><span class="st">"lightgrey"</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">"City Limits"</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>city_limits_gdf.plot(ax<span class="op">=</span>axes[<span class="dv">2</span>], color<span class="op">=</span><span class="st">"lightgrey"</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">"City Limits"</span>)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Building Density</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>ACS_Stops.plot(</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>    column<span class="op">=</span><span class="st">"BD"</span>,</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">"Greys"</span>,</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">0</span>],</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>    markersize<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.7</span>,</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">"Building Density"</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">"Building Density of Bus Stops"</span>)</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">"Longitude"</span>)</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">"Latitude"</span>)</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Floor Area Ratio</span></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>ACS_Stops.plot(</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>    column<span class="op">=</span><span class="st">"FAR"</span>,</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">"viridis"</span>,</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">1</span>],</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>    markersize<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.7</span>,</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">"Floor Area Ratio"</span></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">"Floor Area Ratio of Bus Stops"</span>)</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">"Longitude"</span>)</span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">"Latitude"</span>)</span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Green View Index</span></span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a>ACS_Stops.plot(</span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a>    column<span class="op">=</span><span class="st">"GVI"</span>,</span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a>    cmap<span class="op">=</span><span class="st">"cividis"</span>,</span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>axes[<span class="dv">2</span>],</span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a>    markersize<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.7</span>,</span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="st">"Green View Index"</span></span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">"Green View Index of Bus Stops"</span>)</span>
+<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_xlabel(<span class="st">"Longitude"</span>)</span>
+<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_ylabel(<span class="st">"Latitude"</span>)</span>
+<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust layout to avoid overlap</span></span>
+<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the plots</span></span>
+<span id="cb28-55"><a href="#cb28-55" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MidDay_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-14" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.stats.outliers_influence <span class="im">import</span> variance_inflation_factor</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>fields <span class="op">=</span> [<span class="st">'White_prop'</span>,<span class="st">'Native_American_prop'</span>,<span class="st">'Asian_prop'</span>,</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>          <span class="st">'OtherRaces_prop'</span>,<span class="st">'GI'</span>,<span class="st">'MR'</span>,<span class="st">'MHV'</span>,<span class="st">'PD'</span>,<span class="st">'PR'</span>,<span class="st">'CHR'</span>,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>          <span class="st">'ED'</span>,<span class="st">'MEAN'</span>,<span class="st">'GVI'</span>,<span class="st">'BH'</span>,<span class="st">'FAR'</span>,<span class="st">'Enclosure'</span>]</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> ACS_Stops[fields].dropna() </span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> data[<span class="st">'MEAN'</span>]  </span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data.drop(columns<span class="op">=</span>[<span class="st">'MEAN'</span>])  </span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)  </span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(Y, X).fit()</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>vif_data <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>vif_data[<span class="st">'Variable'</span>] <span class="op">=</span> X.columns</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>vif_data[<span class="st">'VIF'</span>] <span class="op">=</span> [variance_inflation_factor(X.values, i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">1</span>])]</span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">VIF Results:"</span>)</span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vif_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                   MEAN   R-squared:                       0.715
+Model:                            OLS   Adj. R-squared:                  0.714
+Method:                 Least Squares   F-statistic:                     1355.
+Date:                Mon, 23 Dec 2024   Prob (F-statistic):               0.00
+Time:                        22:42:39   Log-Likelihood:                -1190.0
+No. Observations:                8126   AIC:                             2412.
+Df Residuals:                    8110   BIC:                             2524.
+Df Model:                          15                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P&gt;|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                   37.6897      0.017   2210.031      0.000      37.656      37.723
+White_prop               0.2593      0.020     12.789      0.000       0.220       0.299
+Native_American_prop     3.4687      0.640      5.421      0.000       2.214       4.723
+Asian_prop              -0.4149      0.066     -6.302      0.000      -0.544      -0.286
+OtherRaces_prop         -0.5702      0.053    -10.663      0.000      -0.675      -0.465
+GI                      -0.1260      0.058     -2.155      0.031      -0.241      -0.011
+MR                   -7.342e-05   1.92e-05     -3.831      0.000      -0.000   -3.59e-05
+MHV                   -5.36e-07    4.9e-08    -10.931      0.000   -6.32e-07    -4.4e-07
+PD                    1.207e-05   1.54e-06      7.817      0.000    9.04e-06    1.51e-05
+PR                       0.5171      0.056      9.251      0.000       0.408       0.627
+CHR                     -0.1377      0.027     -5.039      0.000      -0.191      -0.084
+ED                       0.0732      0.027      2.670      0.008       0.019       0.127
+GVI                     -6.8951      0.114    -60.568      0.000      -7.118      -6.672
+BH                   -3.054e-05    3.3e-06     -9.256      0.000    -3.7e-05   -2.41e-05
+FAR                     -0.0379      0.001    -38.590      0.000      -0.040      -0.036
+Enclosure               -1.3142      0.118    -11.103      0.000      -1.546      -1.082
+==============================================================================
+Omnibus:                     5227.355   Durbin-Watson:                   0.972
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           177151.677
+Skew:                          -2.572   Prob(JB):                         0.00
+Kurtosis:                      25.288   Cond. No.                     4.84e+07
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 4.84e+07. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+VIF Results:
+                Variable        VIF
+0                  const  30.056540
+1             White_prop   3.476555
+2   Native_American_prop   1.098635
+3             Asian_prop   2.032977
+4        OtherRaces_prop   2.619529
+5                     GI   4.149072
+6                     MR   4.450124
+7                    MHV   4.645628
+8                     PD   3.159379
+9                     PR   4.989106
+10                   CHR   3.027447
+11                    ED   2.829961
+12                   GVI   2.994010
+13                    BH   2.430701
+14                   FAR   2.173048
+15             Enclosure   5.384361</code></pre>
+</div>
+</div>
+<div id="cell-15" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the model</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"ols_model.pkl"</span>, <span class="st">"wb"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    pickle.dump(model, <span class="bu">file</span>)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the VIF data</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>vif_data.to_csv(<span class="st">"vif_results.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-16" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the model</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"ols_model.pkl"</span>, <span class="st">"rb"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    loaded_model <span class="op">=</span> pickle.load(<span class="bu">file</span>)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the VIF data</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>loaded_vif_data <span class="op">=</span> pd.read_csv(<span class="st">"vif_results.csv"</span>)</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the loaded results</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(loaded_model.summary())</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Loaded VIF Results:"</span>)</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(loaded_vif_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                   MEAN   R-squared:                       0.715
+Model:                            OLS   Adj. R-squared:                  0.714
+Method:                 Least Squares   F-statistic:                     1355.
+Date:                Mon, 23 Dec 2024   Prob (F-statistic):               0.00
+Time:                        22:47:14   Log-Likelihood:                -1190.0
+No. Observations:                8126   AIC:                             2412.
+Df Residuals:                    8110   BIC:                             2524.
+Df Model:                          15                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P&gt;|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                   37.6897      0.017   2210.031      0.000      37.656      37.723
+White_prop               0.2593      0.020     12.789      0.000       0.220       0.299
+Native_American_prop     3.4687      0.640      5.421      0.000       2.214       4.723
+Asian_prop              -0.4149      0.066     -6.302      0.000      -0.544      -0.286
+OtherRaces_prop         -0.5702      0.053    -10.663      0.000      -0.675      -0.465
+GI                      -0.1260      0.058     -2.155      0.031      -0.241      -0.011
+MR                   -7.342e-05   1.92e-05     -3.831      0.000      -0.000   -3.59e-05
+MHV                   -5.36e-07    4.9e-08    -10.931      0.000   -6.32e-07    -4.4e-07
+PD                    1.207e-05   1.54e-06      7.817      0.000    9.04e-06    1.51e-05
+PR                       0.5171      0.056      9.251      0.000       0.408       0.627
+CHR                     -0.1377      0.027     -5.039      0.000      -0.191      -0.084
+ED                       0.0732      0.027      2.670      0.008       0.019       0.127
+GVI                     -6.8951      0.114    -60.568      0.000      -7.118      -6.672
+BH                   -3.054e-05    3.3e-06     -9.256      0.000    -3.7e-05   -2.41e-05
+FAR                     -0.0379      0.001    -38.590      0.000      -0.040      -0.036
+Enclosure               -1.3142      0.118    -11.103      0.000      -1.546      -1.082
+==============================================================================
+Omnibus:                     5227.355   Durbin-Watson:                   0.972
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           177151.677
+Skew:                          -2.572   Prob(JB):                         0.00
+Kurtosis:                      25.288   Cond. No.                     4.84e+07
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 4.84e+07. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+Loaded VIF Results:
+                Variable        VIF
+0                  const  30.056540
+1             White_prop   3.476555
+2   Native_American_prop   1.098635
+3             Asian_prop   2.032977
+4        OtherRaces_prop   2.619529
+5                     GI   4.149072
+6                     MR   4.450124
+7                    MHV   4.645628
+8                     PD   3.159379
+9                     PR   4.989106
+10                   CHR   3.027447
+11                    ED   2.829961
+12                   GVI   2.994010
+13                    BH   2.430701
+14                   FAR   2.173048
+15             Enclosure   5.384361</code></pre>
 </div>
 </div>
 
